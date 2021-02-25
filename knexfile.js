@@ -6,7 +6,7 @@ require('dotenv').config()
   DEV_DATABASE_URL='postgresql://postgres:password@localhost:5432/database_name'
   TESTING_DATABASE_URL='postgresql://postgres:password@localhost:5432/testing_database_name'
 
-  Put the above in your .env file. Some adjustments in the connection strings will be needed:
+  Put the above in your .env file. Some adjustments in the connection URLs will be needed:
 
     - 5432 (this is the default TCP port for PostgreSQL, should work as is and can be omitted)
     - postgres (in postgres:password, this is the default superadmin user, might work as is)
