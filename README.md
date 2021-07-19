@@ -28,7 +28,7 @@ The following tutorial explains how to set up this project using PostgreSQL and 
 - **test**: Runs tests.
 - **deploy**: Deploys the main branch to Heroku.
 
-**The following scripts NEED TO BE EDITED before using: replace `YOUR_HEROKU_APP_NAME_HERE`**
+**The following scripts NEED TO BE EDITED before using: replace `YOUR_HEROKU_APP_NAME`**
 
 - **migrateh**: Migrates the Heroku database to the latest.
 - **rollbackh**: Rolls back migrations in the Heroku database.
