@@ -7,10 +7,10 @@
     "migrate": "knex migrate:latest",
     "rollback": "knex migrate:rollback",
     "seed": "knex seed:run",
-    "migrateh": "heroku run knex migrate:latest -a YOUR_HEROKU_APP_NAME",
-    "rollbackh": "heroku run knex migrate:rollback -a YOUR_HEROKU_APP_NAME",
-    "databaseh": "heroku pg:psql -a YOUR_HEROKU_APP_NAME",
-    "seedh": "heroku run knex seed:run -a YOUR_HEROKU_APP_NAME",
+    "migrateh": "heroku run knex migrate:latest -a build-week-africanmarketplace1",
+    "rollbackh": "heroku run knex migrate:rollback -a build-week-africanmarketplace1",
+    "databaseh": "heroku pg:psql -a build-week-africanmarketplace1",
+    "seedh": "heroku run knex seed:run -a build-week-africanmarketplace1",
     "test": "cross-env NODE_ENV=testing jest --watchAll --verbose --runInBand",
     "deploy": "git push heroku main"
   },
@@ -24,7 +24,7 @@
     "dotenv": "10.0.0",
     "express": "4.17.1",
     "helmet": "4.6.0",
-    "knex": "0.95.7",
+    "knex": "^0.95.7",
     "knex-cleaner": "1.3.1",
     "pg": "8.6.0"
   },
