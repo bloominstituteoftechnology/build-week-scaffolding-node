@@ -10,7 +10,7 @@ require('dotenv').config()
 
     - 5432 (this is the default TCP port for PostgreSQL, should work as is and can be omitted)
     - postgres (in postgres:password, this is the default superadmin user, might work as is)
-    - password (in postgres:password, replace with the actual password set in pgAdmin 4)
+    - password (in postgres:password, replace with the actual password of the postgres user)
     - database_name (use the real name of the development database you created in pgAdmin 4)
     - testing_database_name (use the real name of the testing database you created in pgAdmin 4)
 
