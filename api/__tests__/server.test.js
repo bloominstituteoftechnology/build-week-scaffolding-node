@@ -9,9 +9,8 @@ beforeAll(async () => {
 beforeEach(async () => {
   await db.seed.run()
 })
-afterAll(async (done) => {
+afterAll(async () => {
   await db.destroy()
-  done()
 })
 
 it('sanity check', () => {
