@@ -11,7 +11,7 @@
     "rollbackh": "heroku run knex migrate:rollback -a YOUR_HEROKU_APP_NAME",
     "databaseh": "heroku pg:psql -a YOUR_HEROKU_APP_NAME",
     "seedh": "heroku run knex seed:run -a YOUR_HEROKU_APP_NAME",
-    "test": "cross-env NODE_ENV=testing jest --watchAll --verbose --runInBand",
+    "test": "cross-env NODE_ENV=testing jest --verbose --runInBand",
     "deploy": "git push heroku main"
   },
   "engines": {
