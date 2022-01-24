@@ -10,7 +10,7 @@ The following tutorial explains how to set up this project using PostgreSQL and 
 
 - [PostgreSQL, pgAdmin 4](https://www.postgresql.org/download/) and [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed in your local machine.
 - A Heroku app with the [Heroku PostgreSQL Addon](https://devcenter.heroku.com/articles/heroku-postgresql#provisioning-heroku-postgres) added to it.
-- Development and testing databases created with [pgAdmin 4](https://www.pgadmin.org/docs/pgadmin4/4.29/database_dialog.html).
+- Development and testing databases created with [pgAdmin 4](https://www.pgadmin.org/docs/pgadmin4/latest/index.html).
 
 ## Starting a New Project
 
@@ -22,18 +22,18 @@ The following tutorial explains how to set up this project using PostgreSQL and 
 
 - **start**: Runs the app in production.
 - **server**: Runs the app in development.
-- **migrate**: Migrates the local development database to the latest.
-- **rollback**: Rolls back migrations in the local development database.
-- **seed**: Truncates all tables in the local development database, feel free to add more seed files.
+- **migrate:dev**: Migrates the local development database to the latest.
+- **rollback:dev**: Rolls back migrations in the local development database.
+- **seed:dev**: Truncates all tables in the local development database, feel free to add more seed files.
 - **test**: Runs tests.
 - **deploy**: Deploys the main branch to Heroku.
 
 **The following scripts NEED TO BE EDITED before using: replace `YOUR_HEROKU_APP_NAME`**
 
-- **migrateh**: Migrates the Heroku database to the latest.
-- **rollbackh**: Rolls back migrations in the Heroku database.
+- **migrate:prod**: Migrates the Heroku database to the latest.
+- **rollback:prod**: Rolls back migrations in the Heroku database.
 - **databaseh**: Interact with the Heroku database from the command line using psql.
-- **seedh**: Runs all seeds in the Heroku database.
+- **seed:prod**: Runs all seeds in the Heroku database.
 
 ## Hot Tips
 

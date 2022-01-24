@@ -4,36 +4,36 @@
   "scripts": {
     "start": "node index.js",
     "server": "nodemon index.js",
-    "migrate": "knex migrate:latest",
-    "rollback": "knex migrate:rollback",
-    "seed": "knex seed:run",
-    "migrateh": "heroku run knex migrate:latest -a YOUR_HEROKU_APP_NAME",
-    "rollbackh": "heroku run knex migrate:rollback -a YOUR_HEROKU_APP_NAME",
-    "databaseh": "heroku pg:psql -a YOUR_HEROKU_APP_NAME",
-    "seedh": "heroku run knex seed:run -a YOUR_HEROKU_APP_NAME",
+    "migrate:dev": "knex migrate:latest",
+    "rollback:dev": "knex migrate:rollback",
+    "seed:dev": "knex seed:run",
+    "migrate:prod": "heroku run knex migrate:latest -a YOUR_HEROKU_APP_NAME",
+    "rollback:prod": "heroku run knex migrate:rollback -a YOUR_HEROKU_APP_NAME",
+    "database:prod": "heroku pg:psql -a YOUR_HEROKU_APP_NAME",
+    "seed:prod": "heroku run knex seed:run -a YOUR_HEROKU_APP_NAME",
     "test": "cross-env NODE_ENV=testing jest --verbose --runInBand",
     "deploy": "git push heroku main"
   },
   "engines": {
-    "node": "16.13.1"
+    "node": "16.13.2"
   },
   "license": "ISC",
   "dependencies": {
     "cors": "2.8.5",
-    "dotenv": "10.0.0",
-    "express": "4.17.1",
-    "helmet": "4.6.0",
-    "knex": "0.95.14",
+    "dotenv": "14.2.0",
+    "express": "4.17.2",
+    "helmet": "5.0.2",
+    "knex": "1.0.1",
     "knex-cleaner": "1.3.1",
     "pg": "8.7.1"
   },
   "devDependencies": {
-    "@types/jest": "27.0.3",
+    "@types/jest": "27.4.0",
     "cross-env": "7.0.3",
-    "eslint": "8.4.1",
-    "jest": "27.4.4",
+    "eslint": "8.7.0",
+    "jest": "27.4.7",
     "nodemon": "2.0.15",
-    "supertest": "6.1.6"
+    "supertest": "6.2.2"
   },
   "repository": {
     "type": "git",
