@@ -1,8 +1,8 @@
 # Build Week Scaffolding
 
-Read these instructions to get an overview of what's involved in scaffolding an Express + PostgreSQL app that deploys to Heroku.
+First READ these instructions to get an overview of what's involved in scaffolding an Express + PostgreSQL app that deploys to Heroku.
 
-Then watch the [Setting up PostgreSQL for Build Week Video Tutorial](https://bloomtech-1.wistia.com/medias/2625bl7sei) for a detailed demonstration of setting up a project using a Windows dev machine. Other OSes will require some adjustments.
+Then watch [this video tutorial](https://bloomtech-1.wistia.com/medias/2625bl7sei) for a detailed demonstration of setting up a project, using a Windows dev machine. Other operating systems will require some adjustments.
 
 **There will have been updates to this repo since the video tutorial was created, so make sure to read these instructions before watching.**
 
