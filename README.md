@@ -27,7 +27,7 @@ This means Postgres and its tooling must be installed on the development machine
 
 Another difference is that executing migrations for the first time will not make the database pop into existance as was the case with SQLite. You must use the pgAdmin 4 GUI to create the development database by hand. Once the database exists and shows up in pgAdmin 4 you can connect to it using Knex and migrate it.
 
-On production, we create the database by installing the Postgres Addon on our Heroku app from its dashboard on the Heroku website.
+On production, we create the database by installing the Postgres Addon from the dashboard of our app on the Heroku website.
 
 ## Installation of PostgreSQL on the Development Machine
 
