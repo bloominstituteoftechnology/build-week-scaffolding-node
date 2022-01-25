@@ -13,7 +13,7 @@ Then watch the [Setting up PostgreSQL for Build Week Video Tutorial](https://blo
 3. Dev database Graphical-User Interface tool: [pgAdmin 4](https://www.pgadmin.org/download/)
 4. Dev database Command-Line Interface tool: [psql](https://www.postgresql.org/docs/14/app-psql.html)
 
-**Note:** **pgAdmin4** and **psql** should be bundled with the PostgreSQL installer, but they might not be the latest versions.
+**Note:** **pgAdmin 4** and **psql** should be bundled with the PostgreSQL installer, but they might not be the latest versions.
 
 5. Production cloud service: [Heroku](https://id.heroku.com/login)
 6. Prod database: [Heroku Postgres Addon](https://devcenter.heroku.com/articles/heroku-postgresql)
