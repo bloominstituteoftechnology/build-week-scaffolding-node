@@ -31,7 +31,7 @@ In production, we create the database by installing the Postgres Addon from the 
 
 ## Installation of PostgreSQL on the Development Machine
 
-Install [Postgres](https://www.postgresql.org/download/) on your computer, and take into account that getting psql to work might require a bit of research and effort.
+Install [Postgres](https://www.postgresql.org/download/) on your computer, taking into account that getting psql and pgAdmin 4 up and running might require a bit of research and effort.
 
 1. Leave the default options during the Postgres installation wizard (components, location, port number).
 2. You will be asked to create a password for the superadmin "postgres" db user. Enter a simple string using only letters (e.g. "password").
