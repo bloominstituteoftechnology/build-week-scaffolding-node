@@ -4,7 +4,7 @@ Read these instructions to get an overview of what's involved in scaffolding an 
 
 Then watch the [Setting up PostgreSQL for Build Week Video Tutorial](https://bloomtech-1.wistia.com/medias/2625bl7sei) for a detailed demonstration of setting up a project using a Windows dev machine. Other OSes will require some adjustments.
 
-**There will have been updates to this repo since the video tutorial was created, so make sure to read these instructions before watching**.
+**There will have been updates to this repo since the video tutorial was created, so make sure to read these instructions before watching.**
 
 ## The Stack and Tools
 
@@ -25,7 +25,7 @@ The SQLite database is a file embedded inside the project. PostgreSQL on the oth
 
 This means Postgres and its tooling must be installed on the development machine prior to scaffolding an Express + Postgres app.
 
-Another difference is that executing migrations for the first time will not make the database pop into existance as was the case with SQLite. You must use the pgAdmin 4 GUI to create the development database by hand (or write a SQL script and execute it with the psql CLI). Once the database exists and shows up in pgAdmin 4 you can connect to it using Knex and migrate it.
+Another difference is that executing migrations for the first time will not make the database pop into existance as was the case with SQLite. You must use the pgAdmin 4 GUI to create the development database by hand. Once the database exists and shows up in pgAdmin 4 you can connect to it using Knex and migrate it.
 
 On production, we create the database by installing the Postgres Addon on our Heroku app from its dashboard on the Heroku website.
 
@@ -34,8 +34,8 @@ On production, we create the database by installing the Postgres Addon on our He
 Use the links above to install the software on your computer, and take into account that getting psql to work might require a bit of research and effort.
 
 1. Leave the default options during the Postgres installation wizard (components, location, port number).
-2. You will be asked to create a password for the superadmin "postgres" db user. Use a simple string (e.g. "password").
-3. No need to execute the "Stack Builder" at the end of the installation, you can safely uncheck that and exit the wizard.
+2. You will be asked to create a password for the superadmin "postgres" db user. Enter a simple string using only letters (e.g. "password").
+3. No need to execute the "Stack Builder" at the end of the installation. You can safely uncheck that and exit the wizard.
 4. The first time you open pgAdmin 4 you will be asked to create another password, this time a master password to be able to use pgAdmin.
 
 ## Starting a New Project
