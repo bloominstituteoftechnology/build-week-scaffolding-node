@@ -1,16 +1,42 @@
-# Build Week Scaffolding for Node and PostgreSQL
+# Build Week Scaffolding
 
-## Video Tutorial
+Read these instructions to get an overview of what's involved in scaffolding an Express + PostgreSQL app that deploys to Heroku.
 
-The following tutorial explains how to set up this project using PostgreSQL and Heroku.
+Then watch the [Setting up PostgreSQL for Build Week Video Tutorial](https://bloomtech-1.wistia.com/medias/2625bl7sei) for a detailed demonstration of setting up a project using a Windows dev machine. Other OSes will require some adjustments.
 
-[![Setting up PostgreSQL for Build Week](https://img.youtube.com/vi/kTO_tf4L23I/maxresdefault.jpg)](https://www.youtube.com/watch?v=kTO_tf4L23I)
+**There will have been updates to this repo since the video tutorial was created, so make sure to read these instructions before watching**.
 
-## Requirements
+## The Stack and Tools
 
-- [PostgreSQL, pgAdmin 4](https://www.postgresql.org/download/) and [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) installed in your local machine.
-- A Heroku app with the [Heroku PostgreSQL Addon](https://devcenter.heroku.com/articles/heroku-postgresql#provisioning-heroku-postgres) added to it.
-- Development and testing databases created with [pgAdmin 4](https://www.pgadmin.org/docs/pgadmin4/latest/index.html).
+1. Web server: [Node & Express](https://expressjs.com/)
+2. Development database: [PostgreSQL 14](https://www.postgresql.org/download/)
+3. Dev database Graphical-User Interface tool: [pgAdmin 4](https://www.pgadmin.org/download/)
+4. Dev database Command-Line Interface tool: [psql](https://www.postgresql.org/docs/14/app-psql.html)
+
+**Note:** **pgAdmin4** and **psql** usually come bundled with the PostgreSQL installer, but they might not be the latest versions.
+
+5. Production cloud service: [Heroku](https://id.heroku.com/login)
+6. Prod database: [Heroku Postgres Addon](https://devcenter.heroku.com/articles/heroku-postgresql)
+7. Prod Command-Line Interface tool: [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
+
+## Important Differences between SQLite and Postgres
+
+The SQLite database is a file embedded inside the project. PostgreSQL on the other hand is a full-blown server, separate from the Express server.
+
+This means Postgres and its tooling must be installed on the development machine prior to scaffolding an Express + Postgres app.
+
+Another difference is that executing migrations for the first time will not make the database pop into existance as was the case with SQLite. You must use the pgAdmin 4 GUI to create the development database by hand (or write a SQL script and execute it with the psql CLI). Once the database exists and shows up in pgAdmin 4 you can connect to it using Knex and migrate it.
+
+On production, we create the database by installing the Postgres Addon on our Heroku app from its dashboard on the Heroku website.
+
+## Installation of PostgreSQL on the Development Machine
+
+Use the links above to install the software on your computer, and take into account that getting psql to work might require a bit of research and effort.
+
+1. Leave the default options during the Postgres installation wizard (components, location, port number).
+2. You will be asked to create a password for the superadmin "postgres" db user. Use a simple string (e.g. "password").
+3. No need to execute the "Stack Builder" at the end of the installation, you can safely uncheck that and exit the wizard.
+4. The first time you open pgAdmin 4 you will be asked to create another password, this time a master password to be able to use pgAdmin.
 
 ## Starting a New Project
 
@@ -20,13 +46,13 @@ The following tutorial explains how to set up this project using PostgreSQL and 
 
 ## Scripts
 
-- **start**: Runs the app in production.
-- **server**: Runs the app in development.
-- **migrate:dev**: Migrates the local development database to the latest.
-- **rollback:dev**: Rolls back migrations in the local development database.
-- **seed:dev**: Truncates all tables in the local development database, feel free to add more seed files.
+- **start**: Runs the app with Node.
+- **server**: Runs the app with Nodemon.
+- **migrate:dev**: Migrates the local development db to the latest.
+- **rollback:dev**: Rolls back migrations in the local dev db.
+- **seed:dev**: Truncates all tables in the local dev db.
+- **deploy**: Deploys the main branch to Heroku. Must login to the Heroku CLI and add Heroku as a remote.
 - **test**: Runs tests.
-- **deploy**: Deploys the main branch to Heroku.
 
 **The following scripts NEED TO BE EDITED before using: replace `YOUR_HEROKU_APP_NAME`**
 
@@ -35,9 +61,9 @@ The following tutorial explains how to set up this project using PostgreSQL and 
 - **databaseh**: Interact with the Heroku database from the command line using psql.
 - **seed:prod**: Runs all seeds in the Heroku database.
 
-## Hot Tips
+## Tips
 
-- Figure out the connection to the database and deployment before writing any code.
+- Figure out deployment before writing any additional code.
 
 - If you need to make changes to a migration file that has already been released to Heroku, follow this sequence:
 
@@ -51,10 +77,16 @@ The following tutorial explains how to set up this project using PostgreSQL and 
 
 - Validating and sanitizing client data using a library is much less work than doing it manually.
 
-- Revealing crash messages to clients is a security risk, but during development it's helpful if your frontend devs are able to tell you what crashed.
+- Revealing crash messages to clients is a security risk, but during development it's helpful if your frontend devs are able to tell you what crashed exactly.
 
 - PostgreSQL comes with [fantastic built-in functions](https://hashrocket.com/blog/posts/faster-json-generation-with-postgresql) for hammering rows into whatever JSON shape.
 
 - If you want to edit a migration that has already been released but don't want to lose all the data, make a new migration instead. This is a more realistic flow for production apps: prod databases are never migrated down. We can migrate Heroku down freely only because there's no valuable data from customers in it. In this sense, Heroku is acting more like a staging environment than production.
 
-- If your fronted devs are interested in running the API locally, help them set up PostgreSQL & pgAdmin in their machines, and teach them how to run migrations in their local. This empowers them to (1) help you troubleshoot bugs, (2) obtain the latest code by simply doing `git pull` and (3) work with their own data, without it being wiped every time you roll back the Heroku db. Collaboration is more fun and direct, and you don't need to deploy as often.
+- If your fronted devs are interested in running the API locally, help them set up PostgreSQL & pgAdmin on their machines, and teach them how to run migrations in their local. This empowers them to (1) help you troubleshoot bugs, (2) obtain the latest code by simply doing a `git pull` and (3) work with their own data, without it being wiped every time you roll back the Heroku db. Collaboration is more fun and direct, and you don't need to deploy as often.
+
+## Video Demonstration
+
+The following demo explains how to set up a project using PostgreSQL and Heroku.
+
+[![Setting up PostgreSQL for Build Week](https://tk-assets.lambdaschool.com/e43c6d1e-5ae8-4142-937b-b865d71925fb_unit-4-build-week-project-scaffolding.png)](https://bloomtech-1.wistia.com/medias/2625bl7sei)
